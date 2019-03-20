@@ -1,6 +1,6 @@
 # Deep Reinforcement Learning for Dialogue Generation
 
-[Li et al., 2016](https://arxiv.org/abs/1606.01541)
+[Jiwei Li, Will Monroe, Alan Ritter, Michel Gally, Jianfeng Gao and Dan Jurafsky, 2016](https://arxiv.org/abs/1606.01541)
 
 This paper introduces the dialogue generation model using SEQ2SEQ language model 
 and policy gradient algorithm for deep reinforcement learning.
@@ -53,4 +53,28 @@ sequence for the MLE loss function and increase the sequences being fed into RL 
 
   - Manual evaluation: Three judges are asked to pick better utterances in terms of three factors; single-turn general quality,
   single-turn ease to answer and multi-turn general quality.
+  
+  
+# End-to-End Task-Completion Neural Dialogue Systems
+[Xiujun Li, Yun-Nung Chen, Lihong Li, Jianfeng Gao and Asli Celikyilmax, 2018](https://arxiv.org/abs/1703.01008)  
+  - [Link to the source code](https://github.com/MiuLab/TC-Bot)  
 
+The dialogue system that they suggested is based on supervised learning and Reinforcement learning.
+Unlike the paper summarized above (Jiwei Li), they used Deep Q Network for the RL algorithm.
+They divided their system into 2 parts: User simulator and the dialogue system.
+
+* User simulator  
+The user simulator sets up the virtual user's goal and generate sentences accordingly.
+
+* Dialogue System  
+The dialogue system understands the language by parsing the sentences with slots and intents and manages dialogue by tracking the dialogue status and also elaborating policy using DQN based RL.
+  - NLU:  
+In the NLU part, they also induced the simulated errors and test if system outputs the replies correctly.
+NLU is operated with LSTM-based vectorized words, slot and intent.
+Here slot means the key content of the utterance, e.g. RequestTicket = Intent, Moviename = slot and Jurassic Park = value for the slot.
+They mark the boundary of slot with common BIO notation for the sequence labelling and the intent is marked at a sentence level.
+  - RL: 
+  They used target network and experience replay tricks --> Could not understand well and have to study DQN
+* Evaluation  
+They checked success rate and average turns with both RL model and rule-based model in terms of the frame-level semantics and language understanding. The detailed factors that they are exporing were intent and the slot level. They found out that slot-level-errors are more critical and among them when the system understands a wrong value for a certain slot, the performance becomes worse. Because it is very difficult for the system to find out that the value is correct or not.
+  
