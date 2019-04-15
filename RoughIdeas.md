@@ -30,15 +30,16 @@ user gives the system feedback corresponding to the robots answer to a given pro
   
   ```
   correct_answer_at_g1 = 'Kyrgyzstan'
-  g1 = {(t-2)_H: (GameStart, [Ask], 0, {Direction:[NW], RefPoint:[China], Answer:[]}), 
+  g1 = {(t-2)_H: ('GameStart', [Ask], 0, {Direction:[NW], RefPoint:[China], Answer:[]}), 
         (t-2)_R: ({Direction:[NW], RefPoint:[China], Answer:[]}, [Answer], -10, 
                   {Direction: [NW], RefPoint:[China], Answer:[Kazakhstan]}),
         (t-1)_H: ({Direction: [NW], RefPoint:[China], Answer:[Kazakhstan], [Inform], -15, 
                   {Direction:[S], Refpoint:[Kazakhstan, China], Answer:[]}),
         (t-1)_R: ({Direction:[S], Refpoint:[Kazakhstan, China], Answer:[], [Answer], -25, 
                   {Direction: [S], Refpoint:[Kazakhstan, China], Answer:[Tajikistan]}),
-        (t)_H: ({Direction: [S], Refpoint:[Kazakhstan, China], Answer:[Tajikistan], [Complain, Inform], -30,
-                {{Direction: [S,N], Refpoint:[Kazakhstan, China, Tajikistan], Answer:[]})}      
+        (t)_H: ({Direction: [S], Refpoint:[Kazakhstan, China], Answer:[Tajikistan]}, [Complain, Inform], -30,
+                {{Direction: [S,N], Refpoint:[Kazakhstan, China, Tajikistan], Answer:[]})
+         }      
   ```
 
 To overcome the limit of ASR, if the system categorize a word 'Kajakistan' as a country name with NER module,
