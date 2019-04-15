@@ -38,7 +38,7 @@ user gives the system feedback corresponding to the robots answer to a given pro
         (t-1)_R: ({Direction:[S], Refpoint:[Kazakhstan, China], Answer:[], [Answer], -25, 
                   {Direction: [S], Refpoint:[Kazakhstan, China], Answer:[Tajikistan]}
         (t)_H: ({Direction: [S], Refpoint:[Kazakhstan, China], Answer:[Tajikistan], [Complain, Inform], -30,
-                {{Direction: [S,N], Refpoint:[Kazakhstan, China, Tajikistan], Answer:[]}      
+                {{Direction: [S,N], Refpoint:[Kazakhstan, China, Tajikistan], Answer:[]})}      
   ```
 
 To overcome the limit of ASR, if the system categorize a word 'Kajakistan' as a country name with NER module,
