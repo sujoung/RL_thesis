@@ -78,3 +78,26 @@ They mark the boundary of slot with common BIO notation for the sequence labelli
 * Evaluation  
 They checked success rate and average turns with both RL model and rule-based model in terms of the frame-level semantics and language understanding. The detailed factors that they are exporing were intent and the slot level. They found out that slot-level-errors are more critical and among them when the system understands a wrong value for a certain slot, the performance becomes worse. Because it is very difficult for the system to find out that the value is correct or not.
   
+
+# Learning Empathy-Driven Emotion Expressions using Affective Modulations
+[Nikhil Churamani, Pablo Barros, Erik Strahl and Stefan Wermter](https://www2.informatik.uni-hamburg.de/wtm/publications/2018/CBSW18/Churamani_Learning_Empathy_Driven_Web_WTM.pdf)
+
+This paper proposes the system that can interpret and generate facial expressions using offline based training and online leraning.
+Their system aimed for the conversion of categories of emotions into continuous vectors so that an agent can read and write facial expressions representing two or more emotions.
+The other important point for this study was that it focuses on long-term interaction between human and robot and also sets the reward system based on the context long-termly.
+They suggested a structure for the system such as emotion perception using GWR(growing when required), affective memory, mood estimating, affective modulation (calculation into vectors), expression learning with actor-critic architecture.
+
+* Expression learning  
+1) Input form : 5-tuple Mood affective vectors 
+2) Output form : eyebrows and mouth wavelet parameters with LED light on NICO robot  
+   (yStretch, yOffset, xStretch, xOffset)  
+3) Method: DDPG(deep deterministic policy gradient) based actor-critic architecture  
+4) Actor: generate mouth and eyebrows expressions in 16-tuple according to policy pi   
+5) Critic: calculate Q value given state(mood affect vector) and action(16-tuple that actor generates)  
+           input processed through concatenated dense layer and then finally connected to output which predicts Q-value
++ Both actor and critic networks are modelled as feed-forward multilayer perceptron
+6) Reward: Pre-defined reward function or user's direct assessment  
+7) network training: off-policy using target networks 
+8) update of the reward function : when a user evaluate aptness of the generated expression
+
+
