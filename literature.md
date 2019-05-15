@@ -74,7 +74,7 @@ NLU is operated with LSTM-based vectorized words, slot and intent.
 Here slot means the key content of the utterance, e.g. RequestTicket = Intent, Moviename = slot and Jurassic Park = value for the slot.
 They mark the boundary of slot with common BIO notation for the sequence labelling and the intent is marked at a sentence level.
   - RL: 
-  They used target network and experience replay tricks --> Could not understand well and have to study DQN
+  They used target network and experience replay tricks in DQN algorithm -- see the source code.
 * Evaluation  
 They checked success rate and average turns with both RL model and rule-based model in terms of the frame-level semantics and language understanding. The detailed factors that they are exporing were intent and the slot level. They found out that slot-level-errors are more critical and among them when the system understands a wrong value for a certain slot, the performance becomes worse. Because it is very difficult for the system to find out that the value is correct or not.
   
